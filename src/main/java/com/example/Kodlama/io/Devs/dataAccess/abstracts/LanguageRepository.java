@@ -1,17 +1,14 @@
 package com.example.Kodlama.io.Devs.dataAccess.abstracts;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.Kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import com.example.Kodlama.io.Devs.entites.concretes.ProgrammingLanguage;
 
 
+public interface LanguageRepository extends JpaRepository<ProgrammingLanguage, Integer> {
 
-import com.example.Kodlama.io.Devs.entites.concretes.ProgramingLanguage;
-
-
-public interface LanguageRepository {
-	List<ProgramingLanguage> getAll() ;
-	ProgramingLanguage getById(int id);
+	void save(CreateLanguageRequest languageRequest);
+	ProgrammingLanguage findById(int id);
 	
-	void add(ProgramingLanguage language);
-	void delete(int id);
-	void update(ProgramingLanguage language);
 }
