@@ -63,7 +63,7 @@ public class LanguageManager implements LanguageService {
 		languageRepository.deleteById(id);
 
 	}
-
+	
 	@Override
 	public void update(UpdateLanguageRequest languageRequest, int id) {
 		ProgrammingLanguage language = languageRepository.findById(id);
@@ -75,6 +75,8 @@ public class LanguageManager implements LanguageService {
 		this.languageRepository.save(language);
 
 	}
+	
+	
 
 	boolean checkName(String name) {
 		List<ProgrammingLanguage> languages = languageRepository.findAll();
@@ -92,5 +94,9 @@ public class LanguageManager implements LanguageService {
 		}
 
 	}
+
+	
+
+	
 
 }
